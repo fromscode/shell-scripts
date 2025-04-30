@@ -94,3 +94,31 @@
         *) echo "Default" ;;
     esac
     ```
+
+## Functions
+
+- Nothing is included inside parenthesis
+- Called without parenthesis
+- Any number of arguments can be passed to a function
+- May or may not return a value
+- Example 1:
+    ```sh
+        greet() {                   # nothing inside parenthesis
+            echo "Hello $1"         # passed arguments are accessed using $1, $2 and so on
+        }
+
+        greet "Alice"               # calling a function does not use parenthesis and instead we pass arguments with space
+    ```
+
+- Example 2:
+    ```sh
+        double() {      # note no space after function name and parenthesis
+            return $$(($1 * 2))
+        }
+
+        double 2        # calling the function
+
+        res=$?          # catching the return value ********
+
+        echo "Double of 2 is: $res"
+    ```
